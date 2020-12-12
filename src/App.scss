@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0
+  }
+  
+  .App {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    margin: 0 auto;
+    max-width: 92vw;
+    padding: 40px;
+  }
+.form {
+    display: grid;
+    margin-bottom: 2.5em;
+  }
+  
+  .label {
+    margin-bottom: 1rem;
+  }
+
+.react-autosuggest__container{ 
+  .react-autosuggest__input{
+    font-size: .8rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #e6dfdfad;
+    padding: 10px 32px;
+    line-height: 1.5rem;
+    outline: none;
+    width: 100%;
+  }
+  .react-autosuggest__suggestions-list {
+    border-radius: 5px;
+    line-height: 1.5rem;
+    list-style-type: none;
+    padding: 0;
+    padding: 0 10px;
+    margin: 5px 0;
+    font-size: .8rem;
+    background-color: #e6dfdfad;
+    overflow: auto;
+    max-height: 200px;
+    width: 100%;
+  }
+}
+
+.react-autosuggest__suggestion:hover { background-color: #ddd; } 
+ 
+
+.button {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    font-size: .8rem;
+    cursor: pointer;
+    line-height: 1.5rem;
+    transition: background-color 250ms;
+  }
+  
+  .button:hover {
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+
+
+.card{
+  &:hover{
+    opacity: .7;
+  }
+  &-list {
+    column-count: 3;
+  }
+  &-item {
+    margin-bottom: 1rem;
+    position: relative;
+    a{
+      &:after {
+        content: '\A';
+        position: absolute;
+        width: 100%;
+        height:100%;
+        top:0; 
+        left:0;
+        background:rgba(0,0,0,0.35);
+        opacity: 0;
+        transition: all .5s;
+        -webkit-transition: all .5s;
+      }
+      &:hover:after {
+        opacity: 1;
+      }
+      &:hover > #hiding-div p,
+      &:hover > #hiding-div #user-icon
+      {
+        display: block !important;
+      }
+      .card--image {
+        flex: 100%;
+        width: 100%;
+        &:hover{
+          color: black;
+        }
+      }
+      #hiding-div{
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        z-index: 3;
+        p{
+          display: none;
+          margin: 0;
+          font-size: 1rem;
+          color: white; 
+          margin-left: .5em;
+        }
+        #user-icon{
+          display: none;
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+  }
+}
+
+
+#user-icon{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.modal {
+  &-header{
+    border-bottom: 0 !important;
+  }
+  &-title{
+    display: flex;
+    justify-content: center;
+    p{
+      font-size: 18px;
+      margin-left: .5em;
+    }
+  }
+  &-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0 !important;
+    img{
+      width: auto;
+      height: 100%;
+      max-height: 99vh;
+    }
+  }
+  &-footer{
+    display: flex;
+    justify-content: flex-start !important;
+    border: 0 !important;
+    p{
+      font-size: 16px;
+      font-weight: 300;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .form {
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 5px;
+    align-items: flex-start;
+  }
+  .input {
+    margin-right: 1em;
+  }
+}
+@media only screen and (max-width: 769px){
+  .input {
+    margin-bottom: 1em;
+  }
+  .modal {
+    &-body{
+      img{
+        width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+    .card-list {
+        column-count: 1;
+    }
+}
